@@ -24,7 +24,7 @@ app.post('/auth/login', async (req,res) => {
         const user = await UserModel.findOne({ email: req.body.email });
 
         if (!user){
-            return req.status(404).json({
+            return res.status(404).json({
                 message: 'Пользователь не найден',
             });
         }
@@ -105,8 +105,9 @@ app.post('/auth/register', registerValidation, async(req, res) => {
     }
 });
 
-app.get('/auth/me', checkAuth, (req, res) => {
+app.get('/auth/me', checkAuth,  async (req, res) => {
     try {
+        const user = await UserModel.findById
         res.json({
             succsess: true,
         });
