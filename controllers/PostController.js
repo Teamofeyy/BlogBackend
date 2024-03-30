@@ -85,7 +85,7 @@ export const create = async (req,res) => {
 
 export const update = async (req, res) => {
     try {
-        const postId = req.params.postId;
+        const postId = req.params.id;
 
         const doc = await PostModel.updateOne(
             { _id: postId },
