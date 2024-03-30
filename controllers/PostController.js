@@ -11,9 +11,9 @@ export const getAll = async(req, res) =>{
             message: 'Не удалось получить статьи',
         });
     }
-}
+};
 
-    export const getOne = async (req, res) => {
+export const getOne = async (req, res) => {
         try {
             const postId = req.params.id;
     
@@ -36,7 +36,7 @@ export const getAll = async(req, res) =>{
                 message: 'Не удалось получить статьи',
             });
         }
-    };
+};
 
 export const create = async (req,res) => {
     try {
